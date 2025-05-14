@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>JuanFranciscoOjedaBecerra</title>
+    <title>InnovaTuve</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -26,7 +26,7 @@
         <!-- place navbar here -->
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Offcanvas navbar</a>
+                <a class="navbar-brand" href="#">InnovaTuve</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -93,7 +93,7 @@
                 elemtent.classList.toggle("d-none");
             }
         </script>
-        
+
         <div class="container text-center">
             <div class="row align-items-start">
                 <div class="col-4">
@@ -101,6 +101,34 @@
                 </div>
                 <div class="col-4">
                     <input type="button" onclick="prueba()" value="Presiona para remover">
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+        </div>
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col-4">
+
+                </div>
+                <div class="col-4">
+                    <?php
+                    $servername = $_ENV['DATABASE_HOST']; // Esto será 'db'
+                    $username = $_ENV['DATABASE_USER'];   // 'inovajuan'
+                    $password = $_ENV['DATABASE_PASSWORD']; // 'inovajuan1234'
+                    $dbname = $_ENV['DATABASE_NAME'];     // 'pruebaTube'
+
+                    // Crear conexión
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+
+                    // Verificar conexión
+                    if ($conn->connect_error) {
+                        die("Conexión fallida: " . $conn->connect_error);
+                    }
+                    echo "<h1>Conexión exitosa a la base de datos 'pruebaTube' con el usuario 'inovajuan'!</h1>";
+
+                    $conn->close();
+                    ?>
                 </div>
                 <div class="col-4">
                 </div>
