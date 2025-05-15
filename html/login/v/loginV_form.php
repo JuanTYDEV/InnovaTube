@@ -13,12 +13,25 @@
     <link
         href="bootstrap/css/bootstrap.min.css"
         rel="stylesheet" />
+
+    <!-- sweetalert2 -->
+    <script src="sweetalert2-11.21.0/package/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2-11.21.0/package/dist/sweetalert2.min.css">
+
+    <!-- Animaciones y estilis -->
     <style>
         body {
             padding-top: 60px;
             /* Ajusta este valor según la altura de tu navbar */
         }
     </style>
+
+    <!-- Funcionalidad -->
+    <script>
+        function registro_usuario() {
+            location.href = "index.php?accion=registroU"
+        }
+    </script>
 </head>
 
 <body>
@@ -26,11 +39,6 @@
         <!-- place navbar here -->
     </header>
     <main>
-        <script>
-            function registro_usuario(){
-                location.href = "index.php?accion=registroU"
-            }
-        </script>
 
         <div class="container text-center">
             <div class="row align-items-start">
@@ -63,9 +71,18 @@
     <footer>
         <!-- place footer here -->
     </footer>
+    <!-- alertas -->
+    <?php if (isset($error)) { ?>
+        <script>
+            Swal.fire({
+                title: "Error!",
+                text: <?php echo json_encode($error); ?>,
+                icon: <?php echo json_encode($logo); ?>
+            });
+        </script>
+    <?php } ?>
+
     <!-- Bootstrap JavaScript Libraries -->
-
-
     <script
         src="bootstrap/js/bootstrap.bundle.min.js"></script>
 

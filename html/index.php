@@ -27,16 +27,6 @@ if (isset($_GET['accion'])) {
             $loginController->iniciarSesion();
             break;
 
-        case 'success':
-            $loginController->mostrarExito();
-            break;
-        case 'error':
-            $loginController->mostrarError();
-            break;
-        case 'dashboard':
-            $loginController->dashboard();
-            break;
-
         case 'logout':
             $loginController->logout();
             break;
