@@ -26,6 +26,11 @@
         <!-- place navbar here -->
     </header>
     <main>
+        <script>
+            function registro_usuario(){
+                location.href = "index.php?accion=registroU"
+            }
+        </script>
 
         <div class="container text-center">
             <div class="row align-items-start">
@@ -47,22 +52,10 @@
                             <input type="password" id="contrasena" name="contrasena" required>
                         </div>
                         <button type="submit">Iniciar Sesión</button>
+                        <button type="button" onclick="registro_usuario()">Registrate</button>
                     </form>
                 </div>
                 <div class="col-4">
-                </div>
-            </div>
-        </div>
-        <div class="container text-center">
-            <div class="row align-items-start">
-                <div class="col-4">
-
-                </div>
-                <div class="col-4">
-
-                </div>
-                <div class="col-4">
-
                 </div>
             </div>
         </div>

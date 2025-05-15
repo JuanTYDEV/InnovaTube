@@ -1,7 +1,4 @@
 <?php
-// En todos los includes, reemplaza con:
-include_once $_SERVER['DOCUMENT_ROOT'] . '/conexion/lib.database.php';
-
 class Usuario
 {
     private $con;

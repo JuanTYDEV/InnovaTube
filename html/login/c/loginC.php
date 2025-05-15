@@ -1,5 +1,6 @@
 <?php
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/conexion/lib.database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/login/m/loginM.php';
 
 class LoginController
@@ -21,15 +22,6 @@ class LoginController
 
             $usuario = $this->usuarioModel->buscarPorNombreUsuario($nombreUsuario);
 
-         /*    var_dump($usuario);
-            if ($this->usuarioModel->verificarContrasena($contrasena, $usuario['pass'])) {
-                echo "si";
-            } else {
-                echo "no";
-            }
-
-            var_dump($this->usuarioModel->verificarContrasena($contrasena, $usuario['pass']));
- */
 
             if ($usuario && $this->usuarioModel->verificarContrasena($contrasena, $usuario['pass'])) {
                 // Inicio de sesión exitoso
