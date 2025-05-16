@@ -72,10 +72,10 @@
 
         <div class="container text-center">
             <div class="row align-items-start">
-                <div class="col-3">
+                <div class="col-sm-1 col-md-1 col-lg-3">
 
                 </div>
-                <div class="col-6">
+                <div class="col-sm-10 col-md-10 col-lg-6 col-xl-6">
 
 
                     <div class="container text-center">
@@ -90,16 +90,16 @@
 
                         <div class="container text-center">
                             <div class="row mb-4">
-                                <div class="col">
+                                <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombre(s)" id="nombres" name="nombres">
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-6 ">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
                                     <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Apellido Paterno" id="apellido_paterno" name="apellido_paterno">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
                                     <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Apellido Materno" id="apellido_materno" name="apellido_materno">
                                 </div>
                             </div>
@@ -135,18 +135,18 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-5 ">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 mb-4">
                                     <div class="d-grid gap-2">
                                         <button type="submit" class="btn btn-primary">Registrar</button>
                                     </div>
                                 </div>
 
-                                <div class="col-2">
+                                <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
 
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 mb-4">
                                     <div class="d-grid gap-2">
                                         <button type="button" class="btn btn-primary" onclick="inicio_session()" id="login" name="login">Iniciar Sesión</button>
                                     </div>
@@ -159,7 +159,7 @@
                 </div>
 
                 <!-- <button type="submit">Registrar</button> -->
-                <div class="col-3">
+                <div class="col-sm-1 col-md-1 col-lg-3">
 
                 </div>
             </div>
