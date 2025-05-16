@@ -25,7 +25,7 @@
     <!-- animaciones  -->
     <style>
         body {
-            padding-top: 60px;
+            /* padding-top: 60px; */
             /* Ajusta este valor según la altura de tu navbar */
             width: 100vw;
             height: 100vh;
@@ -130,74 +130,78 @@
                             </div>
 
                             <div class="row mb-4">
+                                <div class="col">
+                                    <div class="g-recaptcha" data-sitekey="6LeA6jsrAAAAAOeLlO1-Uj7PPps12JQwhw08pfy5"></div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
                                 <div class="col-5 ">
                                     <div class="d-grid gap-2">
                                         <button type="submit" class="btn btn-primary">Registrar</button>
                                     </div>
-
                                 </div>
+
                                 <div class="col-2">
 
                                 </div>
+
                                 <div class="col-5">
                                     <div class="d-grid gap-2">
                                         <button type="button" class="btn btn-primary" onclick="inicio_session()" id="login" name="login">Iniciar Sesión</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <div class="g-recaptcha" data-sitekey="6LeA6jsrAAAAAOeLlO1-Uj7PPps12JQwhw08pfy5"></div>
-                                </div>
+
                             </div>
                         </div>
 
+                    </form>
                 </div>
 
                 <!-- <button type="submit">Registrar</button> -->
-                </form>
+                <div class="col-3">
 
+                </div>
             </div>
-        </div>
 
-        <!-- alertas -->
-        <?php if (isset($error)) { ?>
+            <!-- alertas -->
+            <?php if (isset($error)) { ?>
+                <script>
+                    Swal.fire({
+                        title: "Error!",
+                        text: <?php echo json_encode($error); ?>,
+                        icon: <?php echo json_encode($logo); ?>
+                    });
+
+                    let nombres = document.getElementById("nombres");
+                    let apellido_paterno = document.getElementById("apellido_paterno");
+                    let apellido_materno = document.getElementById("apellido_materno");
+
+                    nombres.value = <?php echo json_encode($_POST['nombres']); ?>;
+                    apellido_paterno.value = <?php echo json_encode($_POST['apellido_paterno']); ?>;
+                    apellido_materno.value = <?php echo json_encode($_POST['apellido_materno']); ?>;
+                </script>
+            <?php } ?>
+
+            <?php if (isset($validado)) { ?>
+                <script>
+                    Swal.fire({
+                        title: "Registro Exitoso",
+                        text: <?php echo json_encode($validado); ?>,
+                        icon: "success",
+                        didClose: () => {
+                            window.location.href = "configuracion.php";
+                        }
+                    });
+                </script>
+            <?php } ?>
+
             <script>
-                Swal.fire({
-                    title: "Error!",
-                    text: <?php echo json_encode($error); ?>,
-                    icon: <?php echo json_encode($logo); ?>
-                });
-
-                let nombres = document.getElementById("nombres");
-                let apellido_paterno = document.getElementById("apellido_paterno");
-                let apellido_materno = document.getElementById("apellido_materno");
-
-                nombres.value = <?php echo json_encode($_POST['nombres']); ?>;
-                apellido_paterno.value = <?php echo json_encode($_POST['apellido_paterno']); ?>;
-                apellido_materno.value = <?php echo json_encode($_POST['apellido_materno']); ?>;
-            </script>
-        <?php } ?>
-
-        <?php if (isset($validado)) { ?>
-            <script>
-                Swal.fire({
-                    title: "Registro Exitoso",
-                    text: <?php echo json_encode($validado); ?>,
-                    icon: "success",
-                    didClose: () => {
-                        window.location.href = "configuracion.php";
-                    }
+                document.addEventListener("DOMContentLoaded", function() {
+                    let formulario = document.getElementById("registroform");
+                    formulario.style.opacity = "1";
                 });
             </script>
-        <?php } ?>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let formulario = document.getElementById("registroform");
-                formulario.style.opacity = "1";
-            });
-        </script>
     </main>
     <footer>
         <!-- place footer here -->
