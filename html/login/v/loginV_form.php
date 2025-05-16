@@ -68,7 +68,7 @@
                     <div class="container text-center">
                         <div class="row mb-4">
                             <div class="col">
-                                <h1 style="color: aliceblue;">Registrate</h1>
+                                <h1 style="color: aliceblue;">Inicio de Sesión</h1>
                             </div>
                         </div>
                     </div>
