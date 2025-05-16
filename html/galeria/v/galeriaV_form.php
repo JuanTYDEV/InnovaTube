@@ -119,10 +119,33 @@ if (!isset($_SESSION['nombre_usuario'])) {
             <!-- place footer here -->
         </footer>
 
+        <!-- alertas -->
+
+        <?php if (isset($error)) { ?>
+            <script>
+                Swal.fire({
+                    title: <?php echo json_encode($titulo_error); ?>,
+                    text: <?php echo json_encode($error); ?>,
+                    icon: <?php echo json_encode($logo); ?>,
+                    didClose: () => {
+                        let nombres = document.getElementById("textoBuscar");
+
+                        nombres.value = <?php echo json_encode($_POST['busqueda']); ?>;
+
+                        const enterEvent = new KeyboardEvent('keydown', {
+                            key: 'Enter',
+                            keyCode: 13,
+                        });
+                        nombres.dispatchEvent(enterEvent);
+                    }
+                });
+            </script>
+        <?php } ?>
+
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
+        <!-- Funciones -->
         <script src="galeria/m/galeriaM.js"></script>
 
     </body>

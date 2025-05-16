@@ -44,6 +44,7 @@ function buscarVideos() {
                                             <input type="text" value="${video.snippet.title}" class="form-control " id="titulo" name="titulo" hidden>
                                             <input type="text" value="${video.snippet.description}" class="form-control " id="desc" name="desc" hidden>
                                             <input type="text" value="${video.id.videoId}" class="form-control " id="url" name="url" hidden>
+                                            <input type="text" value="${busqueda}" class="form-control " id="busqueda" name="busqueda" hidden>
                                             <button type="submit" target="_blank" class="btn btn-warning align-items-center">Agregar a favoritos</button>
                                         </form>
                                     </div>

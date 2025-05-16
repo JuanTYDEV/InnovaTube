@@ -23,29 +23,24 @@ class galeriacontroller
             $url = $_POST["url"];
             $nombreUsuario = $_SESSION["nombre_usuario"];
 
+            $busqueda = $_POST["busqueda"];
 
             $respusta = $this->modeloGaleriaR->registrarfavorito($img, $titulo, $descripcion, $url, $nombreUsuario);
 
             if ($respusta) {
-                echo '<script>
-                        Swal.fire({
-                        title: "Agregado a favoritos",
-                        text: "El video se agrego a favoritos",
-                        icon: "success"
-                        });
-                    </script>';
+                $titulo_error='Agregado a favoritos';
+                $error = 'El video se agrego a favoritos.';
+                $logo = "success";
+                require $_SERVER['DOCUMENT_ROOT'] . '/galeria/v/galeriaV_form.php'; // Mostrar el formulario con el error
             } else {
-                echo '<script>
-                        Swal.fire({
-                        title: "Error!",
-                        text: "Ocurrio un error intentalo de nuevo!!",
-                        icon: "error"
-                        });
-                    </script>';
+                $titulo_error='Error';
+                $error = 'Ocurrio un error intentelo de nuevo mas tarde.';
+                $logo = "warning";
+                require $_SERVER['DOCUMENT_ROOT'] . '/galeria/v/galeriaV_form.php'; // Mostrar el formulario con el error
             }
         } else {
             // Si no es una petición POST, mostrar el formulario de inicio de sesión
-            require $_SERVER['DOCUMENT_ROOT'] . '/register/v/RegisterV_form.php';
+            require $_SERVER['DOCUMENT_ROOT'] . '/register/v/galeriaV_form.php';
         }
     }
 
