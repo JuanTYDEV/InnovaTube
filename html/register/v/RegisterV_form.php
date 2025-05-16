@@ -25,14 +25,7 @@
     <!-- animaciones  -->
     <style>
         body {
-            /* padding-top: 60px; */
-            /* Ajusta este valor según la altura de tu navbar */
-            width: 100vw;
-            height: 100vh;
 
-        }
-
-        body {
             background: linear-gradient(90deg, rgba(140, 46, 46, 1) 0%, rgba(199, 87, 94, 1) 79%, rgba(153, 146, 83, 1) 100%);
         }
 

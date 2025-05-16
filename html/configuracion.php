@@ -17,6 +17,10 @@ if (!isset($_SESSION['nombre_usuario'])) {
             case 'logout':
                 $galeryController->logout();
                 break;
+
+            case 'favoritoA':
+                $galeryController->seleccionfavorito();
+                break;
         }
     } else {
         $galeryController->mostrarformularioGaleria(); // Mostrar el formulario si no hay acción especificada

@@ -20,7 +20,7 @@ class LoginController
             $nombreUsuario = $_POST['nombre_usuario'];
             $contrasena = $_POST['contrasena'];
 
-            $usuario = $this->usuarioModel->buscarPorNombreUsuario($nombreUsuario);
+            $usuario = $this->usuarioModel->buscarPorNombreUsuario($nombreUsuario, $nombreUsuario);
 
 
             if ($usuario && $this->usuarioModel->verificarContrasena($contrasena, $usuario['pass'])) {
